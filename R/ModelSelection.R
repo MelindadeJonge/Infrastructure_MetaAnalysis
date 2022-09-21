@@ -20,21 +20,24 @@ ncores = 4
 load(file.path('Data','Processed','GroupedData_main.RData'))
 load(file.path('Data','Processed','VarCovarMatrices_main.RData'))
 
-## ----- Model Selection & best models -------------------------------------------------------------
+# Specify random & fixed effect terms
 REList = list(Mammals=list(~1|ID, ~1|Order/SpeciesCode, ~1|Source/Study),
               Birds=list(~1|ID, ~1|Order/SpeciesCode, ~1|Source/Study),
               Reptiles=list(~1|ID, ~1|Family/SpeciesCode, ~1|Source/Study),
               Amphibians=list(~1|ID, ~1|Family/SpeciesCode, ~1|Source/Study))
 
-FEList_combined = list(FEMB, FEMB, FERep, FEAmph)
+FEListAll = list(FEMB, FEMB, FERep, FEAmph)
 
-for(group in 3:length(names(DataList))) {
+## ----- Model Selection & best model fit ----------------------------------------------------------
+for(group in 1:length(names(DataList))) {
   print(paste0('Starting fixed effects selection for ',names(DataList)[group]))
-  FEList = FEList_combined[[group]]
+  FEList = FEListAll[[group]]
 
+  # Create cluster of workers to run models in parallel
   cl = parallel::makeCluster(ncores)
   registerDoParallel(cl)
 
+  # Fit all fixed effect structures to extract fit statistics and fitted parameters
   Results <- foreach(i=1:length(FEList), .combine='rbind') %dopar% {
     library(metafor)
     FixedEffects = Reduce(paste, deparse(FEList[[i]][[1]]))
@@ -66,15 +69,14 @@ for(group in 3:length(names(DataList))) {
   write.csv(Results, file=file.path('Output',
                                     paste0('ModelSelectionAICc_',names(DataList)[group],'.csv')))
 
-  # Refit best model using REML and save in 'Models' directory
+  # Refit best model using REML and save in 'Output/Models/'
   final_model <- rma.mv(logRR,mods=formula(Results$FixedEffects[1]),
-                  V=VarCovarList[[group]],
-                  random=REList[[group]],
-                  data=DataList[[group]],
-                  method="REML")
+                        V=VarCovarList[[group]],
+                        random=REList[[group]],
+                        data=DataList[[group]],
+                        method="REML")
   save(final_model,file=file.path('Output','Models',
                                   paste0('FinalModel',names(DataList)[group],'.RData')))
-
 }
 
 

@@ -35,7 +35,7 @@ X$ID = paste0('S',rownames(X))
 X$Dist[is.na(X$Dist)] = (X$MaxDist[is.na(X$Dist)] + X$MinDist[is.na(X$Dist)]) / 2
 X$CDist[is.na(X$CDist)] = (X$MaxCDist[is.na(X$CDist)] + X$MinCDist[is.na(X$CDist)]) / 2
 
-#R emove controls 
+#Remove controls
 indexControls = rowSums(cbind2((X$CDist == X$Dist), cbind2((X$MaxCDist == X$MaxDist),
                                                           (X$MinCDist == X$MinDist))),
                         na.rm=T) != 0
