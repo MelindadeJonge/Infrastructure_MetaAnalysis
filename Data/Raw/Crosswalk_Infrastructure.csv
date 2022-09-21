@@ -1,0 +1,23 @@
+in_database,category
+County road,Paved road
+Dirt road,Unpaved road
+Fire trail,Non-traffic
+Highway,Paved road
+Pipeline,Non-traffic
+Powerline,Powerline
+Road,Paved road
+Secondary road,Paved road
+Tertiary road,Paved road
+Seismic line,Non-traffic
+Skid trail,Non-traffic
+Park road,Paved road
+Unpaved road,Unpaved road
+Logging road,Unpaved road
+Primary logging road,Unpaved road
+Secondary logging road,Unpaved road
+Paved road,Paved road
+Gravel road,Unpaved road
+National road,Paved road
+Oil field road,Unpaved road
+Dirt trail,Non-traffic
+Metalled road,Paved road

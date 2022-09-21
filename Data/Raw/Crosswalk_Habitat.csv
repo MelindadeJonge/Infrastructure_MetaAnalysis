@@ -1,0 +1,45 @@
+in_database,category
+Agricultural,Open
+Arctic tundra,Open
+Atlantic forest,Closed
+Boreal forest,Closed
+Coastal sage scrub,Open
+Coniferous forest,Closed
+Desert,Open
+Desert shrubland,Open
+Grassland,Open
+Laurel forest,Closed
+Mallee shrubland,Open
+Mediterranean forest,Closed
+Mixed forest,Closed
+Pine forest,Closed
+Woodland,Closed
+Sclerophyll woodland,Closed
+Secondary forest,Closed
+Temperate forest,Closed
+Tropical forest,Closed
+Tropical rainforest,Closed
+Tundra,Open
+Forest,Closed
+Mangrove forest,Closed
+Arid woodland,Closed
+Deciduous forest,Closed
+Mesophyll vine forest,Closed
+Vine forest,Closed
+Matoral,Closed
+Juniper forest,Closed
+Andean forest,Closed
+Eucalypt forest,Closed
+Grassland/agricultural,Open
+Plantation forest,Closed
+Sandy heathland,Open
+Shrubland,Open
+Montado,Open
+Evergreen forest,Closed
+Oak-hickory forest,Closed
+Oak forest,Closed
+Peat bogs,Open
+Marshland,Open
+Karst forest,Closed
+Subtropical lowland forest,Closed
+Open shrubland,Open
