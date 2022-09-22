@@ -46,8 +46,7 @@ for(group in 1:length(names(DataList))) {
       model <- rma.mv(logRR, mods=FEList[[i]][[1]],
                       V=VarCovarList[[group]],
                       random=REList[[group]],
-                      data=DataList[[group]],
-                      method="ML")
+                      data=DataList[[group]])
       FitStats = model$fit.stats
       R2 = R2.func(model)
       stats = c(FitStats['AICc','ML'],FitStats['BIC','ML'],
@@ -67,14 +66,14 @@ for(group in 1:length(names(DataList))) {
   Results = Results[order(Results$AICc), ]
   Results$dAICc = Results$AICc - Results$AICc[1]
   write.csv(Results, file=file.path('Output',
-                                    paste0('ModelSelectionAICc_',names(DataList)[group],'.csv')))
+                                    paste0('ModelSelectionAICc_',names(DataList)[group],'.csv')),
+            row.names=FALSE)
 
-  # Refit best model using REML and save in 'Output/Models/'
+  # Refit best model and save in 'Output/Models/'
   final_model <- rma.mv(logRR,mods=formula(Results$FixedEffects[1]),
                         V=VarCovarList[[group]],
                         random=REList[[group]],
-                        data=DataList[[group]],
-                        method="REML")
+                        data=DataList[[group]])
   save(final_model,file=file.path('Output','Models',
                                   paste0('FinalModel',names(DataList)[group],'.RData')))
 }
