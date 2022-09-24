@@ -1,0 +1,136 @@
+Mammals: 
+
+Multivariate Meta-Analysis Model (k = 863; method: REML)
+
+    logLik    Deviance         AIC         BIC        AICc  ​ 
+-1203.2569   2406.5137   2420.5137   2453.8204   2420.6450   
+
+Variance Components:
+
+            estim    sqrt  nlvls  fixed             factor 
+sigma^2.1  0.2811  0.5302    863     no                 ID 
+sigma^2.2  0.0340  0.1845     17     no              Order 
+sigma^2.3  0.4302  0.6559    160     no  Order/SpeciesCode 
+sigma^2.4  0.1029  0.3208     47     no             Source 
+sigma^2.5  0.0135  0.1163    117     no       Source/Study 
+
+Test for Residual Heterogeneity:
+QE(df = 861) = 7239.8138, p-val < .0001
+
+Test of Moderators (coefficient 2):
+QM(df = 1) = 0.6216, p-val = 0.4304
+
+Model Results:
+
+         estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+intrcpt   -0.0301  0.1256  -0.2399  0.8104  -0.2763  0.2160    
+mods       0.0084  0.0106   0.7884  0.4304  -0.0124  0.0291    
+
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+
+Birds: 
+
+Multivariate Meta-Analysis Model (k = 2471; method: REML)
+
+    logLik    Deviance         AIC         BIC        AICc  ​ 
+-3212.4047   6424.8094   6438.8094   6479.4903   6438.8549   
+
+Variance Components:
+
+            estim    sqrt  nlvls  fixed             factor 
+sigma^2.1  0.1948  0.4413   2471     no                 ID 
+sigma^2.2  0.0268  0.1638     22     no              Order 
+sigma^2.3  0.1410  0.3756    443     no  Order/SpeciesCode 
+sigma^2.4  0.0886  0.2976     43     no             Source 
+sigma^2.5  0.1667  0.4083     88     no       Source/Study 
+
+Test for Residual Heterogeneity:
+QE(df = 2469) = 26699.6518, p-val < .0001
+
+Test of Moderators (coefficient 2):
+QM(df = 1) = 18.9434, p-val < .0001
+
+Model Results:
+
+         estimate      se     zval    pval    ci.lb   ci.ub     ​ 
+intrcpt   -0.0676  0.1038  -0.6512  0.5149  -0.2710  0.1358      
+mods       0.0189  0.0043   4.3524  <.0001   0.0104  0.0274  *** 
+
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+
+Reptiles: 
+
+Multivariate Meta-Analysis Model (k = 362; method: REML)
+
+   logLik   Deviance        AIC        BIC       AICc  ​ 
+-405.0426   810.0853   824.0853   851.2880   824.4035   
+
+Variance Components:
+
+            estim    sqrt  nlvls  fixed              factor 
+sigma^2.1  0.1399  0.3740    362     no                  ID 
+sigma^2.2  0.0000  0.0000     22     no              Family 
+sigma^2.3  0.1228  0.3505     97     no  Family/SpeciesCode 
+sigma^2.4  0.0421  0.2053     20     no              Source 
+sigma^2.5  0.0000  0.0000     49     no        Source/Study 
+
+Test for Residual Heterogeneity:
+QE(df = 360) = 1447.6392, p-val < .0001
+
+Test of Moderators (coefficient 2):
+QM(df = 1) = 0.2652, p-val = 0.6066
+
+Model Results:
+
+         estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+intrcpt   -0.0261  0.1119  -0.2331  0.8157  -0.2453  0.1932    
+mods       0.0081  0.0158   0.5150  0.6066  -0.0228  0.0391    
+
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+
+Amphibians: 
+
+Multivariate Meta-Analysis Model (k = 216; method: REML)
+
+   logLik   Deviance        AIC        BIC       AICc  ​ 
+-288.5321   577.0643   591.0643   614.6261   591.6080   
+
+Variance Components:
+
+            estim    sqrt  nlvls  fixed              factor 
+sigma^2.1  0.1918  0.4379    216     no                  ID 
+sigma^2.2  0.0000  0.0000     16     no              Family 
+sigma^2.3  0.1309  0.3618     92     no  Family/SpeciesCode 
+sigma^2.4  0.0567  0.2380     15     no              Source 
+sigma^2.5  0.0000  0.0000     25     no        Source/Study 
+
+Test for Residual Heterogeneity:
+QE(df = 214) = 1059.4966, p-val < .0001
+
+Test of Moderators (coefficient 2):
+QM(df = 1) = 1.2113, p-val = 0.2711
+
+Model Results:
+
+         estimate      se     zval    pval    ci.lb   ci.ub   ​ 
+intrcpt    0.0446  0.1276   0.3493  0.7269  -0.2054  0.2945    
+mods      -0.0159  0.0145  -1.1006  0.2711  -0.0443  0.0124    
+
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+
+
