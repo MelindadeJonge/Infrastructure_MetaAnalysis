@@ -1,6 +1,6 @@
 # Infrastructure_MetaAnalysis 
 
-This repository contains the data and scrips to run the analyses for the paper:  
+This repository contains the data and scripts to run the analyses for the paper:  
 de Jonge, M. M. J., Gallego-Zamorano, J., Huijbregts, M. A. J., Schipper, A. M., & Benítez‐López, A. (in press). The impact of linear infrastructure on terrestrial vertebrate populations: A trait-based approach. *Global Change Biology*
 
 When using this data and code, please cite the abovementioned publication as well as the raw data:  
