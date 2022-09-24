@@ -1,0 +1,28 @@
+Mammals: 
+                      intercept     CI_up     CI_low       QE QEp
+AllData              0.07470153 0.3028203 -0.1534173 8410.579   0
+SelectionLargeMeans -0.03695990 0.1730845 -0.2470043 6646.678   0
+
+
+
+Birds: 
+                      intercept      CI_up     CI_low       QE QEp
+AllData             -0.13071563 0.06451151 -0.3259428 26890.13   0
+SelectionLargeMeans -0.02367676 0.17106693 -0.2184205 15242.48   0
+
+
+
+Reptiles: 
+                      intercept     CI_up     CI_low       QE           QEp
+AllData             -0.02675881 0.1661578 -0.2196754 1454.634 5.721318e-131
+SelectionLargeMeans -0.19959474 0.1007383 -0.4999278 1052.298 4.361735e-140
+
+
+
+Amphibians: 
+                     intercept       CI_up     CI_low       QE           QEp
+AllData             -0.2181556 -0.02266591 -0.4136452 1407.170 4.718370e-174
+SelectionLargeMeans -0.1671453  0.04628470 -0.3805753 1212.622 5.777218e-213
+
+
+
