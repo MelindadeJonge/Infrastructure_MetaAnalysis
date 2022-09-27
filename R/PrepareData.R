@@ -49,20 +49,14 @@ X$ControlSD[X$ControlSD == 0] = NA
 X$InfraSD_imputed = X$InfraSD
 X$ControlSD_imputed = X$ControlSD
 
+# Impute unknown standard deviations by assuming abundances follow a Poisson distribution. 
 X$InfraSD_imputed[is.na(X$InfraSD)] = sqrt(X$InfraA[is.na(X$InfraSD)] * X$InfraD[is.na(X$InfraSD)]) / 
   X$InfraD[is.na(X$InfraSD)]
 X$ControlSD_imputed[is.na(X$ControlSD)] = sqrt(X$ControlA[is.na(X$ControlSD)] * X$ControlD[is.na(X$ControlSD)]) /
   X$ControlD[is.na(X$ControlSD)]
 
 ## ---- Calculate effect sizes ---------------------------------------------------------------------
-X$logRR_uncorrected = log(X$InfraA / X$ControlA)
-X$logRR = X$logRR_uncorrected + 0.5 * (X$InfraSD_imputed^2 / (X$InfraN * X$InfraA^2) - 
-                                       X$ControlSD_imputed^2 / (X$ControlN * X$ControlA^2))
-
-X$VAR_uncorrected = (X$InfraSD_imputed^2) / (X$InfraN * X$InfraA^2) + 
-  (X$ControlSD_imputed^2) / (X$ControlN * X$ControlA^2)
-X$VAR = X$VAR_uncorrected + 0.5 * (X$InfraSD_imputed^4 / (X$InfraN^2 * X$InfraA^4) + 
-                                   X$ControlSD_imputed^4 / (X$ControlN^2 * X$ControlA^4))
+X=calcEffectSize(X)
 
 ## ---- Prepare moderators -------------------------------------------------------------------------
 # Log distance

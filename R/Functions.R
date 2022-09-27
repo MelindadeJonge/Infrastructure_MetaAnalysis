@@ -1,3 +1,15 @@
+## ---- Effect sizes (log RR delta + variance) -----------------------------------------------------
+calcEffectSize <- function(X) {
+  X$logRR_uncorrected = log(X$InfraA / X$ControlA)
+  X$logRR = X$logRR_uncorrected + 0.5 * (X$InfraSD_imputed^2 / (X$InfraN * X$InfraA^2) - 
+                                           X$ControlSD_imputed^2 / (X$ControlN * X$ControlA^2))
+  
+  X$VAR_uncorrected = (X$InfraSD_imputed^2) / (X$InfraN * X$InfraA^2) + 
+    (X$ControlSD_imputed^2) / (X$ControlN * X$ControlA^2)
+  X$VAR = X$VAR_uncorrected + 0.5 * (X$InfraSD_imputed^4 / (X$InfraN^2 * X$InfraA^4) + 
+                                       X$ControlSD_imputed^4 / (X$ControlN^2 * X$ControlA^4))
+  return(X)
+}
 
 ## ---- Variance-covariance matrix -----------------------------------------------------------------
 calc.vRRDelta <- function(x) {
